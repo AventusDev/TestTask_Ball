@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 28304742244525578}
   - component: {fileID: 4812027033938757122}
   - component: {fileID: 3695097363003719405}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SecondBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

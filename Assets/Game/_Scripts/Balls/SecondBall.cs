@@ -29,7 +29,7 @@ public class SecondBall : BallAbstract, IInteractable
         EventsManager.Instance.OnInputPressed += () => CanScaling = true;
         EventsManager.Instance.OnInputReleased += () => CanScaling = false;
         EventsManager.Instance.OnInputReleased += Shoot;
-        EventsManager.Instance.OnGameLoose += () => this.gameObject.SetActive(false);
+        EventsManager.Instance.OnDoorCanBeReached += () => this.gameObject.SetActive(false);
     }
     public void Update()
     {
@@ -72,7 +72,7 @@ public class SecondBall : BallAbstract, IInteractable
     private void PlayVFX(Vector3 contactPoint)
     {
         _explosionParticle.transform.position = contactPoint;
-        _explosionParticle.transform.localScale = this.transform.localScale;
+        _explosionParticle.transform.localScale = this.transform.localScale * 1.3f;
         _explosionParticle.Play();
     }
 

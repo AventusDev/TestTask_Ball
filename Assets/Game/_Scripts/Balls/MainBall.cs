@@ -14,15 +14,17 @@ public class MainBall : BallAbstract
         EventsManager.Instance.OnDoorCanBeReached += JumpToTheDoor;
         EventsManager.Instance.OnInputPressed += () => CanScaling = true;
         EventsManager.Instance.OnInputReleased += () => CanScaling = false;
-        EventsManager.Instance.OnGameLoose += () => this.gameObject.SetActive(false);
     }
     public void Update()
     {
+        Debug.Log("UPD");
         if (CanScaling)
         {
-            if (transform.localScale.x > 0.2f)
+            Debug.Log("UPD2");
+            if (this.transform.localScale.x > 0.2f)
             {
-                transform.localScale -= new Vector3(_changedSizePerTick, _changedSizePerTick, _changedSizePerTick) * _changedSizeSpeed * Time.deltaTime;
+                Debug.Log("UPD3");
+                this.transform.localScale -= new Vector3(_changedSizePerTick, _changedSizePerTick, _changedSizePerTick) * _changedSizeSpeed * Time.deltaTime;
             }
             else
             {
